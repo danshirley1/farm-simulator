@@ -7,6 +7,7 @@
         type="number"
         required
         autofocus
+        :disabled="isSubmissionInProgress"
       />
     </b-form-group>
 
@@ -16,6 +17,7 @@
         v-model="livestockQuantity"
         type="number"
         required
+        :disabled="isSubmissionInProgress"
       />
     </b-form-group>
 
@@ -25,6 +27,7 @@
         v-model="tractorCount"
         type="number"
         required
+        :disabled="isSubmissionInProgress"
       />
     </b-form-group>
 
@@ -34,6 +37,7 @@
         v-model="milkMachineCount"
         type="number"
         required
+        :disabled="isSubmissionInProgress"
       />
     </b-form-group>
 
@@ -43,6 +47,7 @@
         v-model="milkProductionQuantity"
         type="number"
         required
+        :disabled="isSubmissionInProgress"
       />
     </b-form-group>
 

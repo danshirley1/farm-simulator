@@ -37,7 +37,16 @@ export default {
   computed: {
     ...mapState('dataEntry', [
       'isFormSubmissionInProgress',
+      'completedCalculation',
     ]),
+  },
+  created() {
+    this.$store.dispatch('dataEntry/clear');
+  },
+  watch: {
+    completedCalculation(newVal, oldVal) {
+      if (!oldVal && newVal) this.$router.push('/results');
+    },
   },
   methods: {
     onFormSubmit(formVals) {
