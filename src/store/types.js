@@ -1,1 +1,1 @@
-export const APP_BACKEND_TEST_WORKED = 'app/BACKEND_TEST_WORKED'; // eslint-disable-line import/prefer-default-export
+export const DATA_ENTRY_SET_SUBMISSION_IN_PROGRESS = 'dataEntry/SET_SUBMISSION_IN_PROGRESS'; // eslint-disable-line import/prefer-default-export
