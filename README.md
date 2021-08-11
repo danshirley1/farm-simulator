@@ -1,9 +1,9 @@
 # farm-simulator
-An interview test, just how much methane is your farm actually generating?
+An interview test, just how many emissions is your farm producing?
 
 This project uses [GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html).
 
-Please develop against the right Node environment, there is an `.nvmrc` file. (See [here](https://medium.com/@faith__ngetich/locking-down-a-project-to-a-specific-node-version-using-nvmrc-and-or-engines-e5fd19144245) for more info.) 
+Please develop against the right Node environment, there is an `.nvmrc` file. (See [here](https://medium.com/@faith__ngetich/locking-down-a-project-to-a-specific-node-version-using-nvmrc-and-or-engines-e5fd19144245) for more info.)
 
 ## Front end client
 

@@ -1,5 +1,7 @@
+const { getFarmEmissions } = require('./source-data');
+
 function doCalculateResponse() {
-  return 'results - wip';
+  return getFarmEmissions();
 }
 
 module.exports = {

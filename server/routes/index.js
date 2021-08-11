@@ -6,9 +6,9 @@ router.get('/', (req, res) => {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/test', (req, res) => {
-  const response = doCalculateResponse(req.body.data);
-  return res.send(response);
+router.post('/test', async (req, res) => {
+  const result = await doCalculateResponse(req.body.data);
+  return res.send(result);
 });
 
 module.exports = router;

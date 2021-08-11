@@ -1,5 +1,5 @@
 <template>
-  <fragment>
+  <div>
     <h6>
       THIS IS THE RESULTS PAGE (TODO)
     </h6>
@@ -11,7 +11,7 @@
     <pre>
     {{ completedCalculation }}
     </pre>
-  </fragment>
+  </div>
 </template>
 
 <script>
