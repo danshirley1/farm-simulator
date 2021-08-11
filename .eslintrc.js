@@ -3,13 +3,13 @@ module.exports = {
 
   parserOptions: {
     parser: 'babel-eslint',
-    sourceType: 'module'
+    sourceType: 'module',
   },
 
   env: {
     jest: true,
     browser: true,
-    node: true
+    node: true,
   },
 
   extends: [
@@ -18,14 +18,14 @@ module.exports = {
   ],
 
   globals: {
-    __static: true
+    __static: true,
   },
 
   plugins: [
     'vue',
   ],
 
-  'rules': {
+  rules: {
     'linebreak-style': 1,
     'max-len': [2, 150],
     'global-require': 0,
@@ -37,20 +37,20 @@ module.exports = {
     'no-multi-assign': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-     'vue/html-self-closing': 0,
-     'onject.property.newline': 0,
-     'vue/max-attributes-per-line': 0,
+    'vue/html-self-closing': 0,
+    'onject.property.newline': 0,
+    'vue/max-attributes-per-line': 0,
   },
 
   overrides: [
     {
       files: [
         '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
       ],
       env: {
-        jest: true
-      }
-    }
-  ]
-}
+        jest: true,
+      },
+    },
+  ],
+};
