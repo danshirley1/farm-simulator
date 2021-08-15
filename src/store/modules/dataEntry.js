@@ -19,7 +19,7 @@ export default {
     async doSubmitDataEntryForm({ commit }, data) {
       commit(types.DATA_ENTRY_SET_SUBMISSION_IN_PROGRESS, true);
 
-      const result = await api.post('/test', { data });
+      const result = await api.post('/calculate-emissions', { data });
 
       commit(types.DATA_ENTRY_SET_COMPLETED_CALCULATION, result.data);
       commit(types.DATA_ENTRY_SET_SUBMISSION_IN_PROGRESS, false);

@@ -1,8 +1,5 @@
 const constants = require('../../../constants');
 const { readFile, parseCsv } = require('../file-io');
-const FarmSourceData = require('./FarmSourceData');
-const PurchasesSourceData = require('./PurchasesSourceData');
-const Farm = require('./Farm');
 const schemaKeys = constants.SOURCE_DATA_SCHEMA;
 
 async function getParsedSourceData(dataFile) {
@@ -70,28 +67,8 @@ function getCombinedFarmInventory(farmData, purchasesData) {
   };
 }
 
-async function getFarmEmissions() {
-  // Parse flat data structure from csv sources
-  const parsedFarmData = await getParsedSourceData(`${__dirname}/../../../${constants.SOURCE_DATA.FARMS_DATA_FILE}`);
-  const parsedPurchasesData = await getParsedSourceData(`${__dirname}/../../../${constants.SOURCE_DATA.PURCHASES_DATA_FILE}`);
-
-  // Create some business objects to maintain source data in a serialised fashion
-  const farmSourceData = new FarmSourceData(parsedFarmData);
-  const purchasesSourceData = new PurchasesSourceData(parsedPurchasesData);
-  const farmData = farmSourceData.getDataStruct();
-  const purchasesData = purchasesSourceData.getDataStruct();
-
-  // Create some business objects to provide collated view per farm of expenditure and ultimately therefore emissions
-  const farms = farmData.reduce((acc, cur) => {
-    acc.push(new Farm(getCombinedFarmInventory(cur, purchasesData)));
-    return acc;
-  }, []);
-
-  return farms;
-}
-
 module.exports = {
-  getFarmEmissions,
+  getParsedSourceData,
   getCombinedFarmInventory,
   getCombinedPurchases,
   getUnitConversionFactor,

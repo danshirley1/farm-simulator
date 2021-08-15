@@ -29,18 +29,22 @@ module.exports = {
       DIESEL: {
         key: 'DIESEL',
         defaultUnit: 'l',
+        label: 'Diesel',
       },
       ELECTRICITY: {
         key: 'ELECTRICITY',
         defaultUnit: 'kwH',
+        label: 'Electricity',
       },
       SOY: {
         key: 'SOY',
         defaultUnit: 'kg',
+        label: 'Soy for cows',
       },
       GRASS: {
         key: 'GRASS',
         defaultUnit: 'kg',
+        label: 'Gras for cows',
       },
     },
     UNITS: {
@@ -49,6 +53,18 @@ module.exports = {
       KG: 'kg',
       GALLON: 'gallon',
       TON: 'ton',
+    },
+  },
+  EMISSIONS_SCHEMA: {
+    SCOPES: keyMirror({
+      FOSSIL: null,
+      ELECTRICITY: null,
+      FOOD: null,
+    }),
+    EMISSION_FACTORS: {
+      ELECTRICITY: 0.23314, // per kWh
+      DIESEL: 2.68787, // per liter
+      FOOD: 1.3289, // per kg
     },
   },
 };
