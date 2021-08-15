@@ -91,3 +91,22 @@ Take a look at the commit history in the repository and you'll see the following
 - **calculations-preparation** (1.5 hours). This brings all of the required reference data in to the runtime in the form of a couple of OO classes which can then be used to start running some  business logic to generate the required calculations. I've skipped the file upload requirement and just put the CSV output of the supplied Excel documents in the `/source-data` directory. There is a CSV parsing routine which generates flat array structures for building up some more formal business objects in the aforementioned classes. This tag sees the introduction of a couple of example unit tests.  
 
 - **calculations-actual**. (TBA). I'll take a look in the morning!
+
+**NOTE**
+
+It is not clear how the fields:
+
+ - 'Tractors Diesel'
+ - 'Usage (l / 100mile)'
+ - 'Milk machines'
+ - 'Usage (kWh) per machine'
+
+fit in to the equation based on the specification.
+
+It is therefore decided that this is either:
+
+- A red herring
+- Should be used to somehow calculate some type of average emission per 'mile' or kwH of electricity usage but I'm not sure there is sufficient information to do that
+- Forms part of some other practical test/ an extension of this test, yet to be further specified
+
+Therefore I am going to calculate the 3 simple emission scopes for each of the 11 farms based on just their purchase history.
