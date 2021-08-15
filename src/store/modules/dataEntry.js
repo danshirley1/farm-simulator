@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as types from '../types';
-import constants from '@/constants';
+import constants from '@/../constants';
 
 const initialState = () => ({
   isFormSubmissionInProgress: false,
