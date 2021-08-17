@@ -39,11 +39,19 @@ function doCalculateScopeFood(purchases) {
 }
 
 function doCalculateFarmEmissions(farm) {
-  return {
+  const rtn = {
     [constants.EMISSIONS_SCHEMA.SCOPES.FOSSIL]: doCalculateScopeFossil(farm.inventory.combinedPurchases),
     [constants.EMISSIONS_SCHEMA.SCOPES.ELECTRICITY]: doCalculateScopeElectricity(farm.inventory.combinedPurchases),
     [constants.EMISSIONS_SCHEMA.SCOPES.FOOD]: doCalculateScopeFood(farm.inventory.combinedPurchases),
   };
+
+  rtn[constants.EMISSIONS_SCHEMA.PER_LITRE_MILK] = (
+    rtn[constants.EMISSIONS_SCHEMA.SCOPES.FOSSIL]
+    + rtn[constants.EMISSIONS_SCHEMA.SCOPES.ELECTRICITY]
+    + rtn[constants.EMISSIONS_SCHEMA.SCOPES.FOOD]
+  ) / farm[constants.SOURCE_DATA_SCHEMA.FARM_DATA.MILK_PRODUCED];
+
+  return rtn;
 }
 
 module.exports = {

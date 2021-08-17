@@ -9,6 +9,7 @@ module.exports = {
     PURCHASES_DATA_FILE: 'source-data/purchases-data.csv',
   },
   SOURCE_DATA_SCHEMA: {
+    USER_FARM_DEFAULT_NAME: 'User Farm',
     FARM_DATA: keyMirror({
       FARM_NAME: null,
       ACRES: null,
@@ -56,6 +57,7 @@ module.exports = {
     },
   },
   EMISSIONS_SCHEMA: {
+    PER_LITRE_MILK: 'PER_LITRE_MILK',
     SCOPES: keyMirror({
       FOSSIL: null,
       ELECTRICITY: null,

@@ -7,8 +7,15 @@ router.get('/', (req, res) => {
 });
 
 router.post('/calculate-emissions', async (req, res) => {
-  const result = await doCalculateResponse(req.body.data);
-  return res.send(result);
+  try {
+    const result = await doCalculateResponse(req.body.data);
+    return res.send(result);
+  } catch (err) {
+    console.error('An error occured whilst handling request!', err);
+
+    if (err.name === 'InvalidUserSubmissionError') return res.sendStatus(400);
+    return res.sendStatus(500);
+  }
 });
 
 module.exports = router;
