@@ -72,6 +72,8 @@
 </template>
 
 <script>
+import constants from '@/../constants';
+
 export default {
   name: 'DataEntryForm',
   props: {
@@ -93,6 +95,7 @@ export default {
       tractorCount: null,
       milkMachineCount: null,
       milkProductionQuantity: null,
+      dataSchemaKeys: constants.SOURCE_DATA_SCHEMA,
     };
   },
   watch: {
@@ -106,11 +109,11 @@ export default {
     onSubmitForm() {
       this.error = null;
       this.onSubmit({
-        farmSize: this.farmSize,
-        livestockQuantity: this.livestockQuantity,
-        tractorCount: this.tractorCount,
-        milkMachineCount: this.milkMachineCount,
-        milkProductionQuantity: this.milkProductionQuantity,
+        [constants.SOURCE_DATA_SCHEMA.FARM_DATA.ACRES]: this.farmSize,
+        [constants.SOURCE_DATA_SCHEMA.FARM_DATA.COW_COUNT]: this.livestockQuantity,
+        [constants.SOURCE_DATA_SCHEMA.FARM_DATA.TRACTOR_COUNT]: this.tractorCount,
+        [constants.SOURCE_DATA_SCHEMA.FARM_DATA.MILK_MACHINE_COUNT]: this.milkMachineCount,
+        [constants.SOURCE_DATA_SCHEMA.FARM_DATA.MILK_PRODUCED]: this.milkProductionQuantity,
       });
     },
     doFormUpdated() {

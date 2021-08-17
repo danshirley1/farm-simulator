@@ -25,6 +25,7 @@ function parseCsv(csvString) {
   const parser = csv.parse({
     trim: true,
     skip_empty_lines: true,
+    from_line: 2,
   });
 
   return new Promise((resolve, reject) => {
