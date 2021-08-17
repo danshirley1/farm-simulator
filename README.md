@@ -90,7 +90,7 @@ Take a look at the commit history in the repository and you'll see the following
 
 - **calculations-preparation** (1.5 hours). This brings all of the required reference data in to the runtime in the form of a couple of OO classes which can then be used to start running some  business logic to generate the required calculations. I've skipped the file upload requirement and just put the CSV output of the supplied Excel documents in the `/source-data` directory. There is a CSV parsing routine which generates flat array structures for building up some more formal business objects in the aforementioned classes. This tag sees the introduction of a couple of example unit tests.  
 
-- **calculations-actual**. (TBA). I'll take a look in the morning!
+- **calculations-actual**. (2 hours).
 
 **NOTE**
 
@@ -110,3 +110,13 @@ It is therefore decided that this is either:
 - Forms part of some other practical test/ an extension of this test, yet to be further specified
 
 Therefore I am going to calculate the 3 simple emission scopes for each of the 11 farms based on just their purchase history.
+
+Update - I have taken this as far as I can for now, enough for us to discuss. Things that I would do next are:
+
+- Pre-populate the drop down options from a GET request to the server to get options for purchases, not a problem
+- Add the actual purchases field options in the form - hard coded in the server code for now as have demonstrated form techniques
+- Form validation server side
+- Get to the bottom of the required calculations
+- All of which is simply a matter of time
+
+Speak later, kind regards - Dan Shirley
